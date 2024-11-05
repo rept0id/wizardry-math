@@ -1,36 +1,33 @@
 # prime-factors-x
 
-The prime factors of a given number are the numbers whose multiplication results in the original number.
+The prime factors of a given number are the numbers whose product results in the original number.
 
 For example, the prime factors of 100 are [2, 2, 5, 5], since 2 * 2 * 5 * 5 = 100.
 
-There are various methods to find prime factors, including deterministic and probabilistic approaches.
+There are various methods for finding prime factors, including both deterministic and probabilistic approaches.
 
 ## Approaches
 
 ### Deterministic
+Deterministic approaches involve testing a **series** of numbers until we achieve the desired outcome.
 
-Deterministic approaches will try **series** of numbers until we get the desired behaviour.
+In our case, the desired outcome is division by a number n (where n > 1) such that there is no remainder. This means we have found one of the prime factors. We then repeat the process with the result until we reach 1. n must be greater than 1, because dividing by 1 always results in no remainder, regardless of whether the number is prime or not.
 
-In our case, of prime factors, the desired behaviour is simply division with a n number (where n>1) to not have a remainder.
-That mean we have found one of our prime numbers. Then we repeat the same for the result until we reach 1.
-N has to be >1 because dividing with 1 always gives no remainder no matter if the number is prime or not.
+Typically, the numbers we test should not be greater than the square root of the given number x (sqrt(x)). This is because of a simple paradox:
 
-Usually, the n numbers we should try shouldn't be bigger than the square root (sqrt) of the given number x (sqrt(x)).
-This is because of a very simple paradox :
 ```
 If sqrt(x) had a factor greater than sqrt(x),
 it would also need a corresponding factor smaller than sqrt(x),
 as the product of two factors larger than sqrt(n), would exceed n).
 ```
 
-To warp up, in a deterministic approach :
-- We need to check **all** numbers (thus "determinism") from 2 up to sqrt(x) to see if any of them divide x without a remainder.
+To wrap up, in a deterministic approach:
+- We need to check **all** numbers (hence "determinism") from 2 up to the square root of x to see if any of them divide x without a remainder.
 - If a number n divides x with no remainder, we add it to the "prime factors" list.
-- We then repeat this process for the result, checking all numbers from 2 up to sqrt(result).
+- We then repeat this process for the result, checking all numbers from 2 up to the square root of the result.
 - This process continues until we reach 1.
 
-A good example can be the number 51.
+A good example is the number 51.
 
 For 51 :
 
@@ -53,9 +50,9 @@ For 51 :
 
 ### Propabilistic
 
-Probabilistic approaches will try random numbers or numbers related to x (e.g., if x = 15, a good guess is 5).
+Probabilistic approaches involve trying random numbers or numbers related to x (e.g., if x = 15, a good guess is 5).
 
-There are methods developed which can be really fast and have very small error range :
+There are methods that have been developed which can be very fast and have a very small error range:
 
 - AKS primality test
 - Elliptic curve primality proving
@@ -63,6 +60,6 @@ There are methods developed which can be really fast and have very small error r
 - Miller–Rabin primality test
 - Solovay–Strassen primality test
 
-From them, `Miller–Rabin` has the simplest algorithm, in a software engineering approach.
+From them, the `Miller–Rabin` test has the simplest algorithm from a software engineering perspective.
 
-Also, there is the `Fermat primality test` which is a solid methiod of finding if a number is prime.
+There is also the `Fermat primality test`, which is a solid method for determining if a number is prime.
