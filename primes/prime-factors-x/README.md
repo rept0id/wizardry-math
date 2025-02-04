@@ -22,10 +22,10 @@ as the product of two factors larger than sqrt(n), would exceed n).
 ```
 
 To wrap up, in a deterministic approach:
-- We need to check **all** numbers (hence "determinism") from 2 up to the square root of x to see if any of them divide x without a remainder.
+- We need to divide with **all** numbers (hence "determinism") from 2 up to the square root of x to see if any of them divide x without a remainder.
 - If a number n divides x with no remainder, we add it to the "prime factors" list.
 - We then repeat this process for the result, checking all numbers from 2 up to the square root of the result.
-- This process continues until we reach 1.
+- This process continues until we reach 1 as a result of the division.
 
 A good example is the number 51.
 
